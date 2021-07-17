@@ -1,5 +1,7 @@
 <?php
-
+namespace App\Providers;
+use Illuminate\Support\Facades\Broadcast;
+use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 /*
 |--------------------------------------------------------------------------
 | Broadcast Channels

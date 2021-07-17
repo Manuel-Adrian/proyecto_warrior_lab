@@ -1,5 +1,7 @@
 <?php
-
+namespace App\Providers;
+use Illuminate\Support\Facades\Artisan;
+use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Foundation\Inspiring;
 
 /*

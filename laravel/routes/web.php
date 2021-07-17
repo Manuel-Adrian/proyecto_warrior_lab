@@ -1,5 +1,7 @@
 <?php
-
+namespace App\Providers;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,6 +13,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'UserController@index');
+
+Route::get('/warrior', function () {
+    return "HOLA";
 });
+
+Route::get('/usuario/{id}', 'UserController@show')
+->where('id', '[0-9]+') ;
+
+Route::get('/prueba', 'UserController@prue');
