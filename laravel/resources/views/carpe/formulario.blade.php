@@ -1,8 +1,8 @@
 <h2>BASE DE DATOS PRUEBA_LARAVEL</h2>
-<input type="text" placeholder="&#128273; Nombre" name="nombre" required>
-<input type="text" placeholder="&#128273; Apellidos" name="apellidos" required>
-<input type="text" placeholder="&#128273; Edad" name="edad" required>
-<input type="text" placeholder="&#128273; Email" name="email" required>
+<input type="text" placeholder="&#128273; Nombre"  name="nombre" required>
+<input type="text" placeholder="&#128273; Apellidos"  name="apellidos" required>
+<input type="text" placeholder="&#128273; Edad"  name="edad" required>
+<input type="text" placeholder="&#128273; Email"  name="email" required>
 {{-- <input type="text" placeholder="&#128273; Id_Estudiante" name="id_estudiante" required>
 <input type="text" placeholder="&#128273; Semestre" name="semestre" required>
 <input type="text" placeholder="&#128273; Grupo" name="grupo" required>

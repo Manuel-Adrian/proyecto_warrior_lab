@@ -21,6 +21,18 @@ class EstudianteController extends Controller
     public function create(){
 
     }
+    public function edit($id){
+        $estudiante=Estudiante::findOrFail($id);
+        return view('carpe.edit',compact('estudiante'));
+    }
+
+    public function update(Request $request, $id){
+        $datosEstudiante=request()->except('_token','_method');
+        Estudiante::where('id','=',$id)->update($datosEstudiante);
+
+        $estudiante=Estudiante::findOrFail($id);
+        return view('carpe.edit',compact('estudiante'));
+    }
 
     public function store(Request $request){
         $datosEstudiante=request()->except('_token');
@@ -37,6 +49,6 @@ class EstudianteController extends Controller
     }
     public function destroy($id){
     Estudiante::destroy($id);
-    return redirect('estudiante');
+    return redirect('carpe');
     }
 }

@@ -1,6 +1,7 @@
 <?php
 namespace App\Providers;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EstudianteController;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,5 @@ Route::get('/hola', 'EstudianteController@index');
 //Route::post('/agregar', 'EstudianteController@store')->name('store');
 Route::post('/carpe', 'EstudianteController@store')->name('store');
 Route::get('/carpe/consulta', 'EstudianteController@index');
+Route::get('/carpe/edit', 'EstudianteController@edit');
+
