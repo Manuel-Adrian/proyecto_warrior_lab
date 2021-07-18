@@ -9,8 +9,8 @@ use App\Grupo;
 class EstudianteController extends Controller
 {
     public function index(){
-        $datos['estudiantes']=Estudiante::class;
-        return view('/carpe/buscar',$datos);
+        $datos['estudiantes']=Estudiante::paginate(6);
+        return view('carpe.consulta',$datos);
         /*$estudiante=Estudiante::all();
         return $estudiante;*/
        /* $grupo=Grupo::all();
@@ -24,7 +24,7 @@ class EstudianteController extends Controller
 
     public function store(Request $request){
         $datosEstudiante=request()->except('_token');
-        Estudiante::insert($datosEstudiante);
+        //Estudiante::insert($datosEstudiante);
         return response()->json($datosEstudiante);
         // $nAgregar= new Estudiante;
         // $nAgregar->nombre=$request->nombre;

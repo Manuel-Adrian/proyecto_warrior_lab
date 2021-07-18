@@ -1,1 +1,2 @@
-EDITAR USUARIOS
+@include('carpe.formulario');
+
