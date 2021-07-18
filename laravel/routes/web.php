@@ -32,4 +32,5 @@ Route::post('/carpe', 'EstudianteController@store')->name('store');
 Route::get('/carpe/consulta', 'EstudianteController@index');
 Route::get('/carpe/{id}/edit', 'EstudianteController@edit')->name('editar');
 
-//Route::put('/update/{id}','EstudianteController@update')->nanme('update');
+Route::put('/update/{id}','EstudianteController@update')->name('update');
+Route::delete('/eliminar/{id}', 'EstudianteController@destroy')->name('eliminar');

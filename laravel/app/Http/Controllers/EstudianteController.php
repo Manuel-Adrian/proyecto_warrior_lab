@@ -31,23 +31,31 @@ class EstudianteController extends Controller
         $datosEstudiante=request()->except('_token','_method');
         Estudiante::where('id','=',$id)->update($datosEstudiante);
 
-        $estudiante=Estudiante::findOrFail($id);
+        $datosestudiante=Estudiante::findOrFail($id);
         return view('carpe.edit',compact('estudiante'));
     }
-        /*public function update(Request $request, $id){
-        $estudiante=Estudiante::findOrFail($id);
-        $estudiante->nombre=$request->nombre;
-        $estudiante->apellidos=$request->apellidos;
-        $estudiante->edad=$request->edad;
-        $estudiante->email=$request->email;
-        $estudiante->save();
-        return back()->with('update','CAMBIOS HECHOS');
-        }*/
+        // public function update(Request $request, $id){
+        // $estudiante=Estudiante::findOrFail($id);
+        // $estudiante=request()->nombre;
+        // $estudiante=request()->apellidos;
+        // $estudiante=request()->edad;
+        // $estudiante=request()->email;
+
+        // return view('carpe.consulta');
+        // return response()->json($estudiante);
+        // $estudiante->nombre=$request->nombre;
+        // $estudiante->apellidos=$request->apellidos;
+        // $estudiante->edad=$request->edad;
+        // $estudiante->email=$request->email;
+        // $estudiante->save();
+        // return back();
+        // }
 
     public function store(Request $request){
         $datosEstudiante=request()->except('_token');
-        Estudiante::insert($datosEstudiante);
-        return response()->json($datosEstudiante);
+        //Estudiante::insert($datosEstudiante);
+        return response()->json($datosEstudiante).back();
+
         // $nAgregar= new Estudiante;
         // $nAgregar->nombre=$request->nombre;
         // $nAgregar->apellidos=$request->apellidos;
@@ -59,6 +67,7 @@ class EstudianteController extends Controller
     }
     public function destroy($id){
     Estudiante::destroy($id);
-    return redirect('carpe');
+    return back();
+    //return redirect('carpe');
     }
 }

@@ -1,4 +1,4 @@
-<form action="{{route('editar',$estudiante->id)}}" method="POST">
+<form action="{{route('update',$estudiante->id)}}" method="POST">
 @method('PUT')
     @csrf
 
