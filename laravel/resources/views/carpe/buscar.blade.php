@@ -7,27 +7,19 @@
 </head>
 
 <body>
-    @foreach ( $estudiantes as $estudiante )
-
-
-<form action="{{url('/carpe')}}" method="POST">
+<form action="{{url('/carpe/buscar')}}" method="POST">
     @csrf
 <h2>BASE DE DATOS PRUEBA_LARAVEL</h2>
-<input type="text" placeholder="&#128273; Nombre" name="nombre" required>
-<input type="text" placeholder="&#128273; Apellidos" name="apellidos" required>
-<input type="text" placeholder="&#128273; Edad" name="edad" required>
-<input type="text" placeholder="&#128273; Email" name="email" required>
+window.alert("USUARIO BUSCADO");
+<input type="text" placeholder="&#128273; Nombre" name="nombre" value="{{$estudiante->nombre}}"required>
+<input type="text" placeholder="&#128273; Apellidos" name="apellidos" value="{{$estudiante->apellidos}}" required>
+<input type="text" placeholder="&#128273; Edad" name="edad" value="{{$estudiante->edad}}" required>
+<input type="text" placeholder="&#128273; Email" name="email" value="{{$estudiante->email}}" required>
 {{-- <input type="text" placeholder="&#128273; Id_Estudiante" name="id_estudiante" required>
 <input type="text" placeholder="&#128273; Semestre" name="semestre" required>
 <input type="text" placeholder="&#128273; Grupo" name="grupo" required>
 <input type="text" placeholder="&#128273; Turno" name="turno" required> --}}
-<input type="submit" value="Registrar" /*name="btnregistrar"*/>
-<input type="submit" value="Actualizar" /*name="btnactualizar"*/>
-<form action="{{url('/carpe/').$estudiante->id'}}" method="post">
-    @csrf
-    {{method_field('DELETE')}}
-<input type="submit" onclick="return confirm('¿Quieres Eliminar?')"
-value="Eliminar" /*name="btneliminar"*/>
+
 <input type="submit" value="Buscar" /*name="btnbuscar"*/></a>
 
 <br>
@@ -106,7 +98,6 @@ input[type="submit"]:active {
     width: 100%;
   }
 }</style>
-@endforeach
 </form>
 </body>
 </html>

@@ -9,9 +9,10 @@ use App\Grupo;
 class EstudianteController extends Controller
 {
     public function index(){
-        $estudiante=Estudiante::all();
-        return $estudiante;
-
+        $datos['estudiantes']=Estudiante::class;
+        return view('/carpe/buscar',$datos);
+        /*$estudiante=Estudiante::all();
+        return $estudiante;*/
        /* $grupo=Grupo::all();
         return $grupo;*/
 
@@ -22,16 +23,20 @@ class EstudianteController extends Controller
     }
 
     public function store(Request $request){
-        $nAgregar= new Estudiante;
-        $nAgregar->nombre=$request->nombre;
-        $nAgregar->apellidos=$request->apellidos;
-        $nAgregar->edad=$request->edad;
-        $nAgregar->email=$request->email;
-        $nAgregar->save();
-        return back()->with('agregar','Campos agregados');
+        $datosEstudiante=request()->except('_token');
+        Estudiante::insert($datosEstudiante);
+        return response()->json($datosEstudiante);
+        // $nAgregar= new Estudiante;
+        // $nAgregar->nombre=$request->nombre;
+        // $nAgregar->apellidos=$request->apellidos;
+        // $nAgregar->edad=$request->edad;
+        // $nAgregar->email=$request->email;
+        // $nAgregar->save();
+        // return back()->with('agregar','Campos agregados');
 
     }
-    public function destroy(){
-
+    public function destroy($id){
+    Estudiante::destroy($id);
+    return redirect('estudiante');
     }
 }

@@ -26,4 +26,6 @@ Route::get('/prueba', 'UserController@prue');
 
 Route::get('/hola', 'EstudianteController@index');
 
-Route::post('/agregar', 'EstudianteController@store')->name('store');
+//Route::post('/agregar', 'EstudianteController@store')->name('store');
+Route::post('/carpe', 'EstudianteController@store')->name('store');
+Route::get('/carpe/buscar', 'EstudianteController@index')->name('store');
