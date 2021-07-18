@@ -23,3 +23,7 @@ Route::get('/usuario/{id}', 'UserController@show')
 ->where('id', '[0-9]+') ;
 
 Route::get('/prueba', 'UserController@prue');
+
+Route::get('/hola', 'EstudianteController@index');
+
+Route::post('/agregar', 'EstudianteController@store')->name('store');
