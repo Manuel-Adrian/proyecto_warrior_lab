@@ -29,27 +29,29 @@ class EstudianteController extends Controller
 
     public function update(Request $request, $id){
         $datosEstudiante=request()->except('_token','_method');
-        Estudiante::where('id','=',$id)->update($datosEstudiante);
+        Estudiante::where('id','=',$id)->first()
+        ->update($datosEstudiante);
 
         $datosestudiante=Estudiante::findOrFail($id);
         return view('carpe.edit',compact('estudiante'));
     }
         // public function update(Request $request, $id){
         // $estudiante=Estudiante::findOrFail($id);
-        // $estudiante=request()->nombre;
-        // $estudiante=request()->apellidos;
-        // $estudiante=request()->edad;
-        // $estudiante=request()->email;
+        //     //$estudiante=Estudiante::findOrFail($id);
+        // // $estudiante=request()->nombre;
+        // // $estudiante=request()->apellidos;
+        // // $estudiante=request()->edad;
+        // // $estudiante=request()->email;
 
-        // return view('carpe.consulta');
-        // return response()->json($estudiante);
+        // // return view('carpe.consulta');
+        // // return response()->json($estudiante);
         // $estudiante->nombre=$request->nombre;
         // $estudiante->apellidos=$request->apellidos;
         // $estudiante->edad=$request->edad;
         // $estudiante->email=$request->email;
         // $estudiante->save();
         // return back();
-        // }
+        //  }
 
     public function store(Request $request){
         $datosEstudiante=request()->except('_token');
