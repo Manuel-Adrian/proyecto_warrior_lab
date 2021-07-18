@@ -1,6 +1,7 @@
-<form action="{{url('/carpe/'.$empleado->id}}" method="POST">
+<form action="{{route('editar',$estudiante->id)}}" method="POST">
+@method('PUT')
     @csrf
-    {{method_field('PATCH')}}
+
     <h2>BASE DE DATOS PRUEBA_LARAVEL</h2>
 <input type="text" placeholder="&#128273; Nombre" value="{{$estudiante->nombre}}" name="nombre" required>
 <input type="text" placeholder="&#128273; Apellidos" value="{{$estudiante->apellidos}}" name="apellidos" required>

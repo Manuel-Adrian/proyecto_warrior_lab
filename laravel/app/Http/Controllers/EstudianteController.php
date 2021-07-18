@@ -24,6 +24,7 @@ class EstudianteController extends Controller
     public function edit($id){
         $estudiante=Estudiante::findOrFail($id);
         return view('carpe.edit',compact('estudiante'));
+
     }
 
     public function update(Request $request, $id){
@@ -33,10 +34,19 @@ class EstudianteController extends Controller
         $estudiante=Estudiante::findOrFail($id);
         return view('carpe.edit',compact('estudiante'));
     }
+        /*public function update(Request $request, $id){
+        $estudiante=Estudiante::findOrFail($id);
+        $estudiante->nombre=$request->nombre;
+        $estudiante->apellidos=$request->apellidos;
+        $estudiante->edad=$request->edad;
+        $estudiante->email=$request->email;
+        $estudiante->save();
+        return back()->with('update','CAMBIOS HECHOS');
+        }*/
 
     public function store(Request $request){
         $datosEstudiante=request()->except('_token');
-        //Estudiante::insert($datosEstudiante);
+        Estudiante::insert($datosEstudiante);
         return response()->json($datosEstudiante);
         // $nAgregar= new Estudiante;
         // $nAgregar->nombre=$request->nombre;

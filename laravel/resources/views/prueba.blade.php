@@ -14,10 +14,12 @@
 
 
 </form>
-<form><br><a href="{{url('/carpe/consulta')}}">
-    <input type="submit" value="Actualizar" /*name="btnactualizar"*/></a> <br></form>
-<form><br><input type="submit" onclick="return confirm('¿Quieres Eliminar?')"
-value="Eliminar" /*name="btneliminar"*/> <br></form>
+
+@if (session('/carpe'))
+<div class="alert alert-sucess mt-3">
+    {{session('/carpe')}}
+</div>
+@endif
 <form action="{{url('/carpe/consulta')}}" method="GET"><br>
     <input type="submit" value="Mostrar" /*name="btnbuscar"*/></a> <br></form>
 </body>

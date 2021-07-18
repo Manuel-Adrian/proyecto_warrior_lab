@@ -19,13 +19,13 @@
 <td>{{$estudiante->apellidos}}</td>
 <td>{{$estudiante->edad}}</td>
 <td>{{$estudiante->email}}</td>
-<td> <a href="{{url('/carpe/'.$estudiante->id.'/edit')}}">
+<td> <a href="{{route('editar',$estudiante->id)}}">
     <input type="submit" value="Editar" /*name="btnactualizar"*/></a>
 
 
 
     |
- <form action="{{url('/carpe/consulta'.$estudiante->id)}}" method="POST">
+ <form action="{{route('editar',$estudiante->id)}}" method="GET">
    @csrf
    {{method_field('DELETE')}}
     <input type="submit" onclick="return confirm('¿Quieres Eliminar?')"

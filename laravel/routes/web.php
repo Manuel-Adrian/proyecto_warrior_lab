@@ -30,5 +30,6 @@ Route::get('/hola', 'EstudianteController@index');
 //Route::post('/agregar', 'EstudianteController@store')->name('store');
 Route::post('/carpe', 'EstudianteController@store')->name('store');
 Route::get('/carpe/consulta', 'EstudianteController@index');
-Route::get('/carpe/edit', 'EstudianteController@edit');
+Route::get('/carpe/{id}/edit', 'EstudianteController@edit')->name('editar');
 
+//Route::put('/update/{id}','EstudianteController@update')->nanme('update');
