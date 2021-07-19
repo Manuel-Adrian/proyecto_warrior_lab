@@ -26,7 +26,7 @@
   }
 
   body {
-    background: #EC610B;
+    background: #0a0a0a;
     display: flex;
     min-height: 100vh;
   }
