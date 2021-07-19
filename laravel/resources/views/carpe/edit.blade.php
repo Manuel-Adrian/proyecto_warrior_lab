@@ -4,9 +4,25 @@
 
     <h2>BASE DE DATOS PRUEBA_LARAVEL</h2>
 <input type="text" placeholder="&#128273; Nombre" value="{{$estudiante->nombre}}" name="nombre" required>
+@error('nombre')
+<div class="alert alert-danger">
+    Falta el Nombre </div>
+@enderror
 <input type="text" placeholder="&#128273; Apellidos" value="{{$estudiante->apellidos}}" name="apellidos" required>
+@error('apellidos')
+<div class="alert alert-danger">
+    Falta los Apellidos</div>
+@enderror
 <input type="text" placeholder="&#128273; Edad" value="{{$estudiante->edad}}" name="edad" required>
+@error('edad')
+<div class="alert alert-danger">
+    Falta la Edad </div>
+@enderror
 <input type="text" placeholder="&#128273; Email" value="{{$estudiante->email}}" name="email" required>
+@error('email')
+<div class="alert alert-danger">
+    Falta algún Correo </div>
+@enderror
 {{-- <input type="text" placeholder="&#128273; Id_Estudiante" name="id_estudiante" required>
 <input type="text" placeholder="&#128273; Semestre" name="semestre" required>
 <input type="text" placeholder="&#128273; Grupo" name="grupo" required>

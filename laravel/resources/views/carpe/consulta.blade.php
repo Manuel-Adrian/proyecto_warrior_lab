@@ -1,7 +1,7 @@
 <html>
-<h2> DATOS DE LOS ALUMNOS </h2>
-<br>
-<br>
+<div><h2> DATOS DE LOS ALUMNOS </h2>
+<p>
+<p></>div>
 <table class="table table-light">
 <thead class="thead-light">
     <tr class="even">

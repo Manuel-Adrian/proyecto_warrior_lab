@@ -28,12 +28,21 @@ class EstudianteController extends Controller
     }
 
     public function update(Request $request, $id){
-        $datosEstudiante=request()->except('_token','_method');
-        Estudiante::where('id','=',$id)->first()
-        ->update($datosEstudiante);
+        $request->validate([
+            'nombre'=>'required', 'apellidos'=>'required', 'edad'=>'required', 'email'=>'required'
+            ]);
+            $estudiante=Estudiante::findOrFail($id);
+            $estudiante->nombre=$request->input('nombre');
+            $estudiante->nombre=$request->input('apellidos');
+            $estudiante->nombre=$request->input('edad');
+            $estudiante->nombre=$request->input('email');
+            $estudiante->save();
+            return view('carpe.consulta',compact('estudiante'));
+        // $datosEstudiante=request()->except(['_token','_method']);
+        // Estudiante::where('id','=',$id)->update($datosEstudiante);
 
-        $datosestudiante=Estudiante::findOrFail($id);
-        return view('carpe.edit',compact('estudiante'));
+        // $datosestudiante=Estudiante::findOrFail($id);
+        // return view('carpe.consulta',compact('estudiante'));
     }
         // public function update(Request $request, $id){
         // $estudiante=Estudiante::findOrFail($id);
@@ -54,6 +63,9 @@ class EstudianteController extends Controller
         //  }
 
     public function store(Request $request){
+        $request->validate([
+            'nombre'=>'required', 'apellidos'=>'required', 'edad'=>'required', 'email'=>'required'
+            ]);
         $datosEstudiante=request()->except('_token');
         Estudiante::insert($datosEstudiante);
         return back();

@@ -1,13 +1,30 @@
 <h2>BASE DE DATOS PRUEBA_LARAVEL</h2>
-<input type="text" placeholder="&#128273; Nombre"  name="nombre" required>
-<input type="text" placeholder="&#128273; Apellidos"  name="apellidos" required>
-<input type="text" placeholder="&#128273; Edad"  name="edad" required>
-<input type="text" placeholder="&#128273; Email"  name="email" required>
+<input type="text" placeholder="&#128273; Nombre"  value="{{old('nombre')}}" name="nombre" required>
+@error('nombre')
+<div class="alert alert-danger">
+    Falta el Nombre </div>
+@enderror
+<input type="text" placeholder="&#128273; Apellidos"  value="{{old('apellidos')}}" name="apellidos" required>
+@error('apellidos')
+<div class="alert alert-danger">
+    Falta los Apellidos</div>
+@enderror
+<input type="text" placeholder="&#128273; Edad"  value="{{old('edad')}}" name="edad" required>
+@error('edad')
+<div class="alert alert-danger">
+    Falta la Edad </div>
+@enderror
+<input type="text" placeholder="&#128273; Email"  value="{{old('correo')}}" name="email" required>
+@error('email')
+<div class="alert alert-danger">
+    Falta algún Correo </div>
+@enderror
 {{-- <input type="text" placeholder="&#128273; Id_Estudiante" name="id_estudiante" required>
 <input type="text" placeholder="&#128273; Semestre" name="semestre" required>
 <input type="text" placeholder="&#128273; Grupo" name="grupo" required>
 <input type="text" placeholder="&#128273; Turno" name="turno" required> --}}
-<input type="submit" value="Registrar" /*name="btnregistrar"*/>
+<input type="submit" onclick="return confirm('¿Quieres insertar este registro?')"
+value="Registrar" /*name="btnregistrar"*/>
 
 <br>
 <style>  {
@@ -22,7 +39,7 @@
   }
 
   body {
-    background: #EC610B;
+    background: #0f0f0f;
     display: flex;
     min-height: 100vh;
   }
